@@ -1,5 +1,5 @@
 import { adicionarNaPlanilha } from "../services/enviar_planilha.js";
-import { calcularTMA, calcularTMR } from "../utils/calcular_tma-tmr.js";
+import { calcularTMA, calcularTMR } from "..services/utils/calcular_tma-tmr.js";
 
 export async function createdata(req, res) {
     const {
