@@ -12,7 +12,7 @@ export async function adicionarNaPlanilha(dados) {
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
 
-  const spreadsheetId = "1dxVAfeXPZL8F_xmi-mymgcv5-2UbGhINDJImtVxMTyc";  // ID da planilha
+  const spreadsheetId = "1NrNIBiDhHU6YNQeFqef-ChtjSD-EW7uedaCGuOSaTec";  // ID da planilha
 
   try {
     // Criação da instância do Google Sheets API
