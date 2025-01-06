@@ -1,7 +1,7 @@
 import express from 'express'
 const routes = express.Router();
-import { createdata } from '../controllers/controller_satisfacao.js';
+import { createdata } from '../controllers/controller_tma-tmr.js';
 
-routes.post("/pesquisa", createdata )
+routes.post("/tma-tmr", createdata )
 
 export default routes;
