@@ -1,13 +1,36 @@
 import { adicionarNaPlanilha } from "../services/enviar_planilha.js";
+import { calcularTMA, calcularTMR } from "../utils/calcular_tempos.js";
 
 export async function createdata(req, res) {
-    const { nome_atendente, telefone, data_atendimento, hora_inicio_atendimento, hora_fim_atendimento, tma, tmr } = req.body;
+    const {
+        nome_atendente,
+        telefone,
+        data_atendimento,
+        hora_inicio_atendimento,
+        hora_fim_atendimento,
+        envio_solicitacao,
+        resposta_recebida,
+    } = req.body;
+
+    // Calcula TMA e TMR
+    const tma = calcularTMA(hora_inicio_atendimento, hora_fim_atendimento);
+    const tmr = calcularTMR(envio_solicitacao, resposta_recebida);
 
     // Dados a serem enviados para a planilha
-    const dados = [nome_atendente, telefone, data_atendimento, hora_inicio_atendimento, hora_fim_atendimento, tma, tmr];
+    const dados = [
+        nome_atendente,
+        telefone,
+        data_atendimento,
+        hora_inicio_atendimento,
+        hora_fim_atendimento,
+        envio_solicitacao,
+        resposta_recebida,
+        tma,
+        tmr,
+    ];
 
     console.log("dados:", dados);
-    
+
     // Chama o service para adicionar os dados à planilha
     const sucesso = await adicionarNaPlanilha(dados);
 
