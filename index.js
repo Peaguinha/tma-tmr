@@ -1,3 +1,11 @@
+import express from 'express';
+import path from 'path';
+import routes from './src/routes/routes.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+
 const app = express();
 
 // Obter o diretório atual
