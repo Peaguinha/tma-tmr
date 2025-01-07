@@ -6,25 +6,21 @@ export async function createdata(req, res) {
         nome_atendente,
         telefone,
         data_atendimento,
-        hora_inicio_atendimento,
+        hora_ini_atendimento,
         hora_fim_atendimento,
-        envio_solicitacao,
-        resposta_recebida,
     } = req.body;
 
     // Calcula TMA e TMR
-    const tma = calcularTMA(hora_inicio_atendimento, hora_fim_atendimento);
-    const tmr = calcularTMR(envio_solicitacao, resposta_recebida);
+    const tma = calcularTMA(hora_ini_atendimento, hora_fim_atendimento);
+    const tmr = calcularTMR(hora_ini_atendimento, hora_fim_atendimento);
 
     // Dados a serem enviados para a planilha
     const dados = [
         nome_atendente,
         telefone,
         data_atendimento,
-        hora_inicio_atendimento,
+        hora_ini_atendimento,
         hora_fim_atendimento,
-        envio_solicitacao,
-        resposta_recebida,
         tma,
         tmr,
     ];
