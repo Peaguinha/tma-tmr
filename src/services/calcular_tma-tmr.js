@@ -1,7 +1,13 @@
+function converterHoraParaMinutos(hora) {
+    // Divide a hora no formato "HH:MM" e converte para minutos
+    const [horas, minutos] = hora.split(":").map(Number);
+    return horas * 60 + minutos;
+}
+
 function calcularDiferencaEmMinutos(inicio, fim) {
-    const inicioData = new Date(`${inicio}`);
-    const fimData = new Date(`${fim}`);
-    return (fimData - inicioData) / 60000; // Retorna a diferença em minutos
+    const inicioMinutos = converterHoraParaMinutos(inicio);
+    const fimMinutos = converterHoraParaMinutos(fim);
+    return fimMinutos - inicioMinutos; // Retorna a diferença em minutos
 }
 
 // Função para calcular TMA
