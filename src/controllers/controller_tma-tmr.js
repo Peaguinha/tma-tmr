@@ -13,13 +13,13 @@ export async function createdata(req, res) {
 
     try {
         // Verificar se as horas foram enviadas corretamente
-        if (!hora_fechou_robo || !hora_ini_atendimento_humano || !hora_fim_atendimento_humano) {
+        if (!hora_fechou_robo || !hora_ini_atendimento || !hora_fim_atendimento) {
             return res.status(400).json({ message: "Hora de fechamento do robô, início ou fim do atendimento humano não fornecida." });
         }
 
         // Calcula TMA e TMR
-        const tma = calcularTMA(hora_ini_atendimento_humano, hora_fim_atendimento_humano);
-        const tmr = calcularTMR(hora_fechou_robo, hora_ini_atendimento_humano);
+        const tma = calcularTMA(hora_ini_atendimento, hora_fim_atendimento);
+        const tmr = calcularTMR(hora_fechou_robo, hora_ini_atendimento);
 
         // Dados a serem enviados para a planilha
         const dados = [
