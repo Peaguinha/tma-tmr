@@ -10,6 +10,6 @@ export function calcularTMA(horaInicio, horaFim) {
 }
 
 // Função para calcular TMR
-export function calcularTMR(envioSolicitacao, respostaRecebida) {
-    return calcularDiferencaEmMinutos(envioSolicitacao, respostaRecebida);
+export function calcularTMR(horaInicio, horaFim) {
+    return calcularDiferencaEmMinutos(horaInicio, horaFim);
 }
