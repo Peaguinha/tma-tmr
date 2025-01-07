@@ -1,9 +1,16 @@
 function converterHoraParaMinutos(hora) {
+    if (!hora) {
+        throw new Error("Hora inválida ou não fornecida.");
+    }
     const [horas, minutos] = hora.split(":").map(Number);
     return horas * 60 + minutos;
 }
 
 function calcularDiferencaEmMinutos(inicio, fim) {
+    if (!inicio || !fim) {
+        throw new Error("Hora de início ou hora de fim não fornecida.");
+    }
+
     const inicioMinutos = converterHoraParaMinutos(inicio);
     let fimMinutos = converterHoraParaMinutos(fim);
 
