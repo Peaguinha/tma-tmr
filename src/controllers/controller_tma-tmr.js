@@ -4,7 +4,7 @@ import { calcularTMA, calcularTMR } from "../services/calcular_tma-tmr.js";
 export async function createdata(req, res) {
     const {
         nome_atendente,
-        telefone,
+        Telefone,
         data_atendimento,
         hora_ini_atendimento,
         hora_fim_atendimento,
@@ -17,7 +17,7 @@ export async function createdata(req, res) {
     // Dados a serem enviados para a planilha
     const dados = [
         nome_atendente,
-        telefone,
+        Telefone,
         data_atendimento,
         hora_ini_atendimento,
         hora_fim_atendimento,
