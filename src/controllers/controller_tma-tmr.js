@@ -7,8 +7,8 @@ export async function createdata(req, res) {
         telefone,
         data_atendimento,
         hora_fechou_robo,
-        hora_ini_atendimento_humano,
-        hora_fim_atendimento_humano
+        hora_ini_atendimento,
+        hora_fim_atendimento
     } = req.body;
 
     try {
@@ -27,8 +27,8 @@ export async function createdata(req, res) {
             telefone,
             data_atendimento,
             hora_fechou_robo,
-            hora_ini_atendimento_humano,
-            hora_fim_atendimento_humano,
+            hora_ini_atendimento,
+            hora_fim_atendimento,
             tma,
             tmr
         ];
