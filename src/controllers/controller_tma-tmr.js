@@ -11,6 +11,8 @@ export async function createdata(req, res) {
         hora_fim_atendimento   // Renomeado
     } = req.body;
 
+console.log("body:", req.body)
+
     try {
         // Verificar se as horas foram enviadas corretamente
         if (!hora_fechou_robo || !hora_ini_atendimento || !hora_fim_atendimento) {
