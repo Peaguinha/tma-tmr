@@ -7,11 +7,11 @@ export async function createdata(req, res) {
         telefone,
         data_atendimento,
         hora_fechou_robo,
-        hora_ini_atendimento,  // Renomeado
-        hora_fim_atendimento   // Renomeado
+        hora_ini_atendimento,
+        hora_fim_atendimento
     } = req.body;
 
-console.log("body:", req.body)
+    console.log("body:", req.body);
 
     try {
         // Verificar se as horas foram enviadas corretamente
